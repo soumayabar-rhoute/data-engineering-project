@@ -2,8 +2,56 @@
 
 **Timeline:** 10–14 weeks (realistic for a beginner)  
 **Pace:** 4–6 hours per week  
-**Goal:** Build an automated data pipeline, then analyze and visualize the results.  
-**Stack:** Python, Pandas, Requests, SQLAlchemy, pytest, PostgreSQL, Docker, Git/GitHub
+
+## Project Purpose
+
+The Nordic countries (Norway, Sweden, Denmark, Finland, Iceland) consistently rank at the top of global quality-of-life indexes, combining high economic growth with low inequality, low unemployment, and strong social safety nets. But these systems face recurring shocks: the early 1990s Finnish banking crisis, the 2008 global financial crisis, and the COVID-19 pandemic.
+
+This project asks: **how do Nordic welfare systems maintain resilience during economic crises?**
+
+You will build an end-to-end data pipeline that ingests public data from the World Bank API, validates and cleans it, loads it into a PostgreSQL database, and produces analysis and visualizations that answer this question.
+
+## Research Questions
+
+1. How did unemployment behave during the 1990s, 2008, and COVID crises in each Nordic country?
+2. Did income inequality (Gini coefficient) increase during these periods?
+3. Is there a relationship between social spending and economic resilience?
+4. Which Nordic model variant (Nordic, Continental, Anglo-Saxon, Mediterranean) shows the most stability during shocks?
+
+## Indicators & Data Sources
+
+- **Unemployment rate** — World Bank indicator `SL.UEM.TOTL.ZS`
+- **GDP per capita** — World Bank indicator `NY.GDP.PCAP.CD`
+- **Gini index** — World Bank indicator `SI.POV.GINI`
+- **Social spending** — OECD SOCX database (optional)
+- **Countries:** Norway (`NOR`), Sweden (`SWE`), Denmark (`DNK`), Finland (`FIN`), Iceland (`ISL`)
+
+## Stack
+
+Python, Pandas, Requests, SQLAlchemy, pytest, PostgreSQL, Docker, Git/GitHub
+
+## Expected Results
+
+When you finish, you will have:
+
+| Deliverable | Description |
+|-------------|-------------|
+| **Automated data pipeline** | A Python script that fetches data from the World Bank API, validates and cleans it, and loads it into PostgreSQL. Run it with one command. |
+| **PostgreSQL database** | A database with a clean, well-structured table containing years of Nordic welfare indicators. You can query it with SQL. |
+| **SQL analysis** | A set of `.sql` files that answer the research questions above. You can run them and explain what the results mean. |
+| **Test suite** | Pytest tests that prove your pipeline components work. You can refactor your code without breaking anything. |
+| **Dashboard** | An interactive dashboard (Streamlit or Power BI) that lets you explore trends, compare countries, and see crisis periods highlighted. |
+| **GitHub portfolio** | A clean, well-committed repository with documentation, architecture notes, and a data dictionary. |
+
+## Success Criteria
+
+You are done when you can:
+1. **Trace any piece of data** from the World Bank API URL all the way to the dashboard without looking at notes.
+2. **Rebuild the entire pipeline from scratch** without referencing your old code.
+3. **Explain every file and folder** in your project to someone who has never seen it.
+4. **Answer the research questions** with data and write a 2–3 sentence interpretation of each result.
+
+If you cannot do these four things, you are not done. Go back to the phase where the gap is.
 
 ---
 

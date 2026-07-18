@@ -1,0 +1,41 @@
+#Python 
+.venv/ 
+_pycache_/
+*.pyc
+*.pyo 
+*.pyd
+
+#Environment & secrets
+.env
+.env.local
+*.pem
+
+#Data files (we keep empty dirs via .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+data/staging/*
+!data/staging/.gitkeep
+
+#Logs
+logs/
+*.log
+
+#Generated files 
+*.csv 
+*.parquet 
+
+#Kilo internal config
+.kilo/
+
+#Project plan (private roadmap)
+plan.md
+
+#OS 
+.DS_Store
+Thumbs.db
+
+#IDE
+.vscode/
+.idea
+*.swp
+*.swo

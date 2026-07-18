@@ -1,0 +1,18 @@
+#docker-compose.yml 
+#This file tells docker compose how to build and run our PostgreSQL database.
+#compose reads this single file and starts the whole "stack" with one command
+
+services: 
+# 'services' is a list of containers (programs) Compose should  run for us.
+postgres :
+# the name of our service. we reference it later as 'postgres'
+image: postgres:16
+#'image' = which pre-built Docker image to download and run. 
+#'postgres:16' = official PostgreSql image, major version 16.
+# we pin to 16 so the version doesn't change unexpectedly later.
+
+container_name: nordi_postgres 
+# A friendly, fixed name for the running container (instead of a random one).
+environment: 
+# environment variables are settings passed INTO the container. 
+# the official postgres image reads these special variables on first start to initialize
