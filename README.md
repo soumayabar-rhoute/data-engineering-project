@@ -88,3 +88,7 @@ pip is the package installer for python. you can use pip to install packages fro
 adds new libraries to our python environment.
 # pip freeze: 
 it looks at our currently active python ven and prints every install package with its exact version, 
+## What is PostgreSQL? : 
+PostgreSQL is a powerful open source object-relational database system that uses and extends the SQL language combined with many features that safely store and scale the most complicated data workolads.
+## what SQLAlchemy:
+SQLAlchemy: is a python library used to interact with relational databases using Python code. It provides tools for executing sql queries and managing databes connections

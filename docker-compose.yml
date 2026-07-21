@@ -4,15 +4,38 @@
 
 services: 
 # 'services' is a list of containers (programs) Compose should  run for us.
-postgres :
+ postgres :
 # the name of our service. we reference it later as 'postgres'
-image: postgres:16
+  image: postgres:16
 #'image' = which pre-built Docker image to download and run. 
 #'postgres:16' = official PostgreSql image, major version 16.
 # we pin to 16 so the version doesn't change unexpectedly later.
 
-container_name: nordi_postgres 
+  container_name: nordi_postgres 
 # A friendly, fixed name for the running container (instead of a random one).
-environment: 
+  environment: 
 # environment variables are settings passed INTO the container. 
-# the official postgres image reads these special variables on first start to initialize
+# the official postgres image reads these special variables on first start to initialize the database automatically. 
+   POSTGRES_USER: nordic_user
+   POSTGRES_PASSWORD: nordic_password
+#that user's password.
+   POSTGRES_DB: nordic_welfare
+#the name of a default databse created on first boot. 
+
+  ports: 
+#maps a port on my machine to a port inside the container. 
+   - "5432:5432"
+#Format is "HOST:CONTAINER".
+#So your Python code / psql connects to localhost:5432, 
+#and Docker forwards that to PostgreSQL's 5432 inside the container.
+  volumes: 
+# A volume is persistent disk storage that survives container restarts.
+   - postgres_data:/var/lib/postgresql/data 
+# the left side : is a named volume we define at the bottom.
+#the right side is wehre PostgreSQL stores its datafiles inside the container.
+#without tis, all our data would vanish every time we run docker compose down
+volumes:
+#here we declare the name volume used above
+ postgres_data:
+#docker manages this on our disk, it is the reason our
+# tables and rows stay safe across restarts.
